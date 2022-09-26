@@ -1,0 +1,16 @@
+# On windows
+
+1. Show WSL version
+$ wsl -l -v
+
+2. Enable GUI application from WSL
+a. install vcxsrv from https://sourceforge.net/projects/vcxsrv/
+b. allow inbound rules for vcxsrv
+c. when opening XLaunch, choose no access control
+d. open XLaunch before running WSL
+
+# On WSL
+
+1. To enable GUI application from WSL, run below commands
+$ echo "export DISPLAY=\"$(grep nameserver /etc/resolv.conf | sed 's/nameserver //'):0\"" >> ~/.bashrc
+$ . ~/.bashrc
